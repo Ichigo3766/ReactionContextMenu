@@ -57,11 +57,9 @@ struct ReactionElement: View {
             .background {
                 Circle()
                     .fill(
-                        isChosen ? Color( // #CCC
-                            red: 204 / 255,
-                            green: 204 / 255,
-                            blue: 204 / 255
-                        ) : .clear
+                        // Use an adaptive UIKit color so the selected-emoji
+                        // highlight circle looks correct in both light and dark mode.
+                        isChosen ? Color(UIColor.systemFill) : .clear
                     )
                     .animation(.spring, value: isChosen)
                     .frame(

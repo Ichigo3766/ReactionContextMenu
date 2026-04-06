@@ -49,7 +49,9 @@ struct ReactionsRowView: View {
         .scrollIndicators(.hidden)
         .scrollTargetBehavior(.viewAligned)
         .background {
-            Color.white.clipShape(
+            // Use an adaptive UIKit color so the pill background matches
+            // the system appearance in both light and dark mode.
+            Color(UIColor.secondarySystemGroupedBackground).clipShape(
                 RoundedRectangle(
                     cornerSize: .init(
                         width: 36,
