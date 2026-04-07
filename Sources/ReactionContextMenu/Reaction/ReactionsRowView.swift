@@ -60,16 +60,10 @@ struct ReactionsRowView: View {
             )
         }
         .padding(.top, 40)
-        .clipped()
+        .fixedSize(horizontal: true, vertical: false)
         .scaleEffect(
             x: appeared ? 1 : 0,
             anchor: appearingSide.unitPoint
-        )
-        .containerRelativeFrame(
-            .horizontal,
-            count: 10,
-            span: 10,
-            spacing: 0
         )
         .onAppear {
             withAnimation {
