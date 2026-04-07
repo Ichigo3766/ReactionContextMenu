@@ -103,14 +103,21 @@ struct ReactionElement: View {
     }
 
     private func animateAppearing() {
-        guard let appearingDelay else { return }
-        withAnimation(
-            .interpolatingSpring(stiffness: 170, damping: 16)
-                .delay(appearingDelay)
-        ) {
-            appeared = true
-        } completion: {
-            calculateShouldPopUp(dragLocation: contextMenuVM.dragLocation)
+        if let appearingDelay {
+            withAnimation(
+                .interpolatingSpring(stiffness: 170, damping: 16)
+                    .delay(appearingDelay)
+            ) {
+                appeared = true
+            } completion: {
+                calculateShouldPopUp(dragLocation: contextMenuVM.dragLocation)
+            }
+        } else {
+            withAnimation(.interpolatingSpring(stiffness: 170, damping: 16)) {
+                appeared = true
+            } completion: {
+                calculateShouldPopUp(dragLocation: contextMenuVM.dragLocation)
+            }
         }
     }
 
