@@ -69,7 +69,7 @@ struct ReactionsRowView: View {
         .containerRelativeFrame(
             .horizontal,
             count: 10,
-            span: 8,
+            span: 10,
             spacing: 0
         )
         .onAppear {
