@@ -47,7 +47,6 @@ struct ReactionsRowView: View {
         .scrollDisabled(longPressStarted)
         .scrollClipDisabled(true)
         .scrollIndicators(.hidden)
-        .scrollTargetBehavior(.viewAligned)
         .background {
             // Use an adaptive UIKit color so the pill background matches
             // the system appearance in both light and dark mode.
